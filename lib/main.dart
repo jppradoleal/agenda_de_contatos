@@ -1,3 +1,4 @@
+import 'package:agenda_de_contatos/screens/contact.dart';
 import 'package:agenda_de_contatos/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
