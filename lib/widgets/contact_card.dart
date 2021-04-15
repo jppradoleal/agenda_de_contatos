@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 
 class ContactCard extends StatelessWidget {
   final Contact _contact;
-  final Function _showContactPage;
+  final Function _showOptions;
+  final int _index;
 
-  ContactCard(this._contact, this._showContactPage);
+  ContactCard(this._contact, this._showOptions, this._index);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _showContactPage(contact: _contact);
+        _showOptions(context, _index);
       },
       child: Card(
         child: Padding(
@@ -29,6 +30,7 @@ class ContactCard extends StatelessWidget {
                     image: _contact.image != null
                         ? FileImage(File(_contact.image))
                         : AssetImage("images/anon_profile.png"),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
